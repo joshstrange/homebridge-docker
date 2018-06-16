@@ -1,4 +1,4 @@
-FROM alpine:3.3
+FROM alpine:3.7
 
 ##################################################
 # Install tools                                  #
@@ -6,6 +6,7 @@ FROM alpine:3.3
 
 RUN apk update && apk add \
 	nodejs \
+    yarn \
 	git \
 	avahi-dev \
 	make \
@@ -16,7 +17,7 @@ RUN apk update && apk add \
 # Install homebridge                             #
 ##################################################
 
-RUN npm install -g homebridge
+RUN yarn global add homebridge
 
 ##################################################
 # Start                                          #
@@ -28,7 +29,6 @@ RUN mkdir -p /var/run/dbus
 
 EXPOSE 5353 51826
 
-ADD install_plugins.sh /root/install_plugins.sh
 ADD run.sh /root/run.sh
 
 VOLUME ["/root/.homebridge"]

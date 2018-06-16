@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "homebridge": "",
+    "homebridge-dyson-link": "",
+    "homebridge-httpdoor": "git+http://jarvis.local:9080/open-source/homebridge-httpdoor.git#11b54e32",
+    "homebridge-platform-wemo": "",
+    "homebridge-tado": ""
+  }
+}
