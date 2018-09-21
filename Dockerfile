@@ -6,11 +6,12 @@ FROM alpine:3.7
 
 RUN apk update && apk add \
 	nodejs \
-    yarn \
+	yarn \
 	git \
 	avahi-dev \
 	make \
 	g++ \
+	ffmpeg \
 	&& rm -rf /var/cache/apk/*
 
 ##################################################
